@@ -82,7 +82,24 @@ A step by step series that tell you how to get Project Groot up and running
 4. navigate to the sync repo in vm
 
 ```
-   cd /vagrant/GIVIT/
+   cd /vagrant/givitsite/
+```
+
+5. Creating an admin user
+
+First we’ll need to create a user who can login to the admin site. Run the following command:
+
+```
+   python3 manage.py createsuperuser
+```
+
+Enter your desired username and press enter.
+You will then be prompted for your desired email address
+The final step is to enter your password. You will be asked to enter your password twice, the second time as a confirmation of the first.
+
+6.
+
+```
    python3 manage.py runserver 0:8000
 ```
 
