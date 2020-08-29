@@ -3,6 +3,7 @@
 {%block content%}
 
 <h1>Feed</h1>
+{% if founds %}
 <table border='1'>
 <tr>
 <td>Title</td>
@@ -12,6 +13,7 @@
 <td>Pic</td>
 <td>Match</td>
 </tr>
+
 {% for item in founds%}
 
 <tr>
@@ -20,11 +22,15 @@
 <td><a href="{{item.url}}">link</a></td>
 <td>{{item.phone_number}}</td>
 <td><img src="{{item.picture}}" width='50px'/></td>
-<td><input type='button' value='match'/></td>
+{% comment %} beyond-io/givit#22 {% endcomment %}
+<td><button type='button' class='btn btn-primary'>match</button></td>
 </tr>
 
 {%endfor%}
 </table>
 
+{% else %}
+<p>anything to show yet..</p>
+{% endif %}
 
 {%endblock%}
