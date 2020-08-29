@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-<<<<<<< HEAD
 class FoundItem(models.Model):
     request_id = models.IntegerField()
     url = models.CharField(max_length=200)
@@ -11,5 +10,3 @@ class FoundItem(models.Model):
     phone_number = models.CharField(max_length=12) 
 
     
-=======
->>>>>>> parent of ce13deb... update changes + add freindfeed
