@@ -34,7 +34,7 @@ class ItemRequest(models.Model):
     friend_id = models.IntegerField(default = 305355356)
     item = models.CharField(max_length = 40,choices = ITEM_CHOICES)
     region = models.CharField(max_length = 40,choices = REGION_CHOICES)
-    special_req= models.TextField(blank=True)
+    special_req= models.TextField()
     status = models.CharField(max_length = 40,default = 'open', choices = STATUS_CHOICES)
     
     

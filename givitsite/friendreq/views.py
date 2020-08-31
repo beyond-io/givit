@@ -25,4 +25,5 @@ def requestItem(request):
 
     if request.method == 'GET':
         founditems = ItemsFound.objects.all()
-        return render (request, 'feed.html', {'founds':founditems})
+        allrequests = ItemRequest.objects.all()
+        return render (request, 'feed.html', {'founds':founditems, 'allRequests':allrequests})
