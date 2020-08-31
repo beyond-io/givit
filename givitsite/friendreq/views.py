@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import ItemRequest
+from .models import ItemsFound
 from .forms import itemRequestForm
 
 # Create your views here.
@@ -19,3 +20,9 @@ def itemRequest_create_view(request):
         'form' :form
         }    
         return render(request, 'itemRequestform.html',context)
+
+def requestItem(request):
+
+    if request.method == 'GET':
+        founditems = ItemsFound.objects.all()
+        return render (request, 'feed.html', {'founds':founditems})

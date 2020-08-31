@@ -37,3 +37,11 @@ class ItemRequest(models.Model):
     special_req= models.TextField(blank=True)
     status = models.CharField(max_length = 40,default = 'open', choices = STATUS_CHOICES)
     
+    
+class ItemsFound(models.Model):
+    request_id = models.IntegerField()
+    url = models.CharField(max_length=200)
+    picture = models.CharField(max_length=200)
+    city = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=12) 

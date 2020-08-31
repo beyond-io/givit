@@ -3,5 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.itemRequest_create_view, name = 'itemRequest_create_view'),
+    path('request', views.itemRequest_create_view, name = 'itemRequest_create_view'),
+    path('feed', views.requestItem, name = 'requestItem'),
 ]
