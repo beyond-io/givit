@@ -1,5 +1,3 @@
-import os
-
 from django.db import migrations
 from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
@@ -12,9 +10,9 @@ class Migration(migrations.Migration):
     ]
 
     def generate_superuser(apps, schema_editor):
-        DJANGO_SU_NAME = os.environ.get('DJANGO_SU_NAME', 'givit')
-        DJANGO_SU_EMAIL = os.environ.get('DJANGO_SU_EMAIL', 'givit@example.com')
-        DJANGO_SU_PASSWORD = os.environ.get('DJANGO_SU_PASSWORD', 'givit')
+        DJANGO_SU_NAME = 'givit'
+        DJANGO_SU_EMAIL = 'givit'
+        DJANGO_SU_PASSWORD = 'givit'
 
         try:
             superuser = User.objects.create_superuser(
