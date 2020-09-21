@@ -9,6 +9,9 @@ from datetime import datetime
 from friendreq.models import ItemRequest
 from friendreq.models import ITEM_CHOICES
 from friendreq.models import ItemsFound
+import logging
+
+logger = logging.getLogger('django')
 
 
 def givit_main():
@@ -28,9 +31,9 @@ def givit_main():
             i = 0
             for url in url_list:
                 if not found.filter(url=url).exists():
-                    print(item.item)
                     counter += 1
-                    print(str(counter) + " new item added")
+                    logger.info(iseek_dict_eng.get(item.item) +
+                                ": " + str(counter) + " new item added")
                     newFound = ItemsFound(
                         request_id=item, url=url, picture=images[i], city=item.region, title=iseek_dict_eng.get(item.item))
                     newFound.save()
@@ -76,7 +79,6 @@ def find_furniture(soup, area, name):
         c1 = t[i].find_all('td', class_='area')
         c2 = t[i].find_all('td', class_='newWindow')
         c4 = t[i].find_all('td', class_='photoIcon')
-
         c5 = t[i].find_all('td', class_='objectName')
         c6 = t[i].find_all('td', class_='objectState')
         item_name = str(c5[0].text)
