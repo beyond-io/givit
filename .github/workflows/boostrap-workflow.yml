@@ -19,5 +19,4 @@ jobs:
         
     - name: Run tests
       run: |
-       ls 
-       python givitsite\manage.py test
+       python givitsite/manage.py test
