@@ -20,6 +20,4 @@ jobs:
     - name: Run tests
       run: |
        cd givitsite
-       pipenv shell
-       ls
-       python manage.py test
+       pipenv run python manage.py test
