@@ -20,8 +20,4 @@ jobs:
     - name: Run tests
       run: |
        cd givitsite
-       pipenv run
-       echo "ok sehll"
-       pipenv sync
-       echo "ok sync"
-       python3 manage.py test
+       pipenv run python manage.py test
