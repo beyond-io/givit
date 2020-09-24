@@ -11,6 +11,9 @@ URL_NAME_LIST = ['requestItem', 'itemRequest_create_view']
 
 class FriendPageTests_views_GET(TestCase):
 
+    def setUp(self):
+        self.client = Client()
+
     # check the status code when navigate to the given url
     def test_request_status_code(self):
         for url in URL_LIST:
