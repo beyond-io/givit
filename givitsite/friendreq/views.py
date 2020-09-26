@@ -6,8 +6,8 @@ from .models import ItemRequest, ItemsFound
 
 
 def itemRequest_create_view(request):
-    form = itemRequestForm(request.POST or None)
     if request.method == 'POST':
+        form = itemRequestForm(request.POST or None)
         if form.is_valid():
             fs = form.save(commit=False)
             fs.friend_id = request.user
@@ -17,6 +17,7 @@ def itemRequest_create_view(request):
         }
         return render(request, "demandDB.html", context)
     else:
+        form = itemRequestForm()
         context = {
             'form': form
         }

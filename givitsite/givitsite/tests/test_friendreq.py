@@ -3,8 +3,8 @@ from django.shortcuts import reverse
 from django.test import Client, TestCase
 from friendreq.models import ItemRequest
 
-URL_LIST = ['/friend/feed']
-URL_NAME_LIST = ['requestItem']
+URL_LIST = ['/friend/feed', '/friend/request']
+URL_NAME_LIST = ['requestItem', 'itemRequest_create_view']
 
 
 class FriendPageTests_views_GET(TestCase):
